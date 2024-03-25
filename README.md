@@ -134,3 +134,36 @@ REPOSITORY                                                   TAG       IMAGE ID 
 us-east1-docker.pkg.dev/container-kafka-2023/demo/keycloak   latest    a537a304adfa   3 days ago   695MB
 
 ```
+
+#### Test with new images: 
+
+```bash
+
+# Steps 1: ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+rsweety751@demo:~$ sudo docker pull nginx/nginx-ingress:latest
+latest: Pulling from nginx/nginx-ingress
+e1caac4eb9d2: Pull complete 
+88f6f236f401: Pull complete 
+c3ea3344e711: Pull complete 
+cc1bb4345a3a: Pull complete 
+da8fa4352481: Pull complete 
+c7f80e9cdab2: Pull complete 
+18a869624cb6: Pull complete 
+d01487c9d6b8: Pull complete 
+4f4fb700ef54: Pull complete 
+074ac632f50d: Pull complete 
+8bfcd0331309: Pull complete 
+ee9b2fbd0002: Pull complete 
+Digest: sha256:db4ce4eede63e3092cbdefef3a363bccb90102c03413aa17bf4efed7a30c6503
+Status: Downloaded newer image for nginx/nginx-ingress:latest
+docker.io/nginx/nginx-ingress:latest
+
+# Steps 2: ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+sudo docker tag nginx/nginx-ingress:latest us-east1-docker.pkg.dev/container-kafka-2023/nginx/nginx-ingress:latest
+
+# Steps 3: ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+sudo docker push us-east1-docker.pkg.dev/container-kafka-2023/nginx/nginx-ingress:latest
+```
